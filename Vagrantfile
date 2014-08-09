@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
         # hostname
         pka_config.vm.hostname = "pagekit"
         pka_config.vm.synced_folder "www", "/var/www", { :mount_options => ['dmode=777','fmode=777'] }
-        pka_config.vm.provision :shell, :inline => "echo \"Europe/Berlin\" | sudo tee /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata"
+        pka_config.vm.provision :shell, :inline => "echo \"America/New_York\" | sudo tee /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata"
 
         # options for VirtualBox
         pka_config.vm.provider :virtualbox do |vb|
